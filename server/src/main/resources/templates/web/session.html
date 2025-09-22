@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <script type="text/javascript" src="/resources/javascripts/session/session_message_handler.js"
+          th:src="@{'/resources/javascripts/session/session_message_handler.js'}"></script>
+</head>
+<body>
+  <input type="hidden" id="clientId" th:value="${clientId}">
+  <input type="hidden" id="messageOrigin" th:value="${messageOrigin}">
+</body>
+</html>

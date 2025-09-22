@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:security="http://www.springframework.org/schema/security"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:sec="http://www.springframework.org/schema/security"
+          xmlns:context="http://www.springframework.org/schema/context"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+              http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+              http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
+
+    <context:annotation-config />
+
+    <bean id="ldapGroupsMappedToScopesConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapGroupsMappedToScopesConfig" />
+
+    <bean id="ldapGroupsAsScopesConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapGroupsAsScopesConfig" />
+
+    <bean id="ldapGroupsNullConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapGroupsNullConfig" />
+
+    <bean id="ldapSearchAndBindConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapSearchAndBindConfig" />
+
+    <bean id="ldapSearchAndCompareConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapSearchAndCompareConfig" />
+
+    <bean id="ldapSimpleBindConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapSimpleBindConfig" />
+
+    <bean id="ldapIntegrationConfig" class="org.cloudfoundry.identity.uaa.impl.config.LdapIntegrationConfig" />
+
+    <security:authentication-manager id="ldapAuthenticationManager">
+        <sec:authentication-provider ref="ldapAuthProvider"/>
+    </security:authentication-manager>
+</beans>
